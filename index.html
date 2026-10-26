@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AditiSpeechStudio</title>
+  <meta name="description" content="Ready speeches for every occasion and customized speech writing.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" id="brand"></a>
+    <nav>
+      <a href="#library">Speech Library</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact" class="btn btn-gold btn-sm">Get a custom speech</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Professional speech writing &amp; coaching</p>
+      <h1 id="tagline"></h1>
+      <p class="lead" id="lead"></p>
+      <div class="search-card" id="speeches">
+        <div class="search-row">
+          <input id="q" type="search" placeholder="Search a topic: farewell, wedding, teachers day, motivation..." autocomplete="off" aria-label="Search speeches">
+          <select id="lang" aria-label="Language"><option value="">All languages</option></select>
+        </div>
+        <div class="chips" id="chips"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section lib-section" id="library">
+    <div class="wrap">
+      <div class="lib-head">
+        <div>
+          <p class="eyebrow" id="libEyebrow"></p>
+          <h2 id="libTitle"></h2>
+          <p class="muted" id="libSub"></p>
+        </div>
+        <div class="lang-tabs" id="langTabs" role="tablist" aria-label="Language">
+          <button data-l="en" class="on">English</button>
+          <button data-l="hi">हिन्दी</button>
+          <button data-l="mr">मराठी</button>
+        </div>
+      </div>
+
+      <div class="occ">
+        <span class="occ-label" id="occLabel"></span>
+        <div class="chips" id="occChips"></div>
+        <p class="occ-line" id="occLine" hidden></p>
+      </div>
+
+      <div class="lib-grid">
+        <div class="lib-list" id="libList"></div>
+        <aside class="lib-reader" id="libReader" aria-live="polite">
+          <div class="reader-empty" id="rdEmpty"></div>
+          <div class="reader-body" id="rdBody" hidden>
+            <p class="rd-topic" id="rdTopic"></p>
+            <h3 id="rdTitle"></h3>
+            <p class="muted small" id="rdMeta"></p>
+            <pre id="rdText"></pre>
+            <div class="rd-actions">
+              <button class="btn btn-gold btn-sm" id="rdCopy"></button>
+              <a class="btn btn-ghost btn-sm" href="#contact" id="rdCustom"></a>
+              <a class="btn btn-ghost btn-sm rd-back" href="#libList" id="rdBack"></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <p class="muted lib-more" id="libMore" hidden></p>
+    </div>
+  </section>
+
+  <section class="section" id="moreSpeeches">
+    <div class="wrap">
+      <h2 id="gridTitle">More ready speeches</h2>
+      <p id="count" class="muted"></p>
+      <div id="results" class="grid"></div>
+      <div class="more-wrap"><button class="btn btn-gold" id="moreBtn" hidden>Show more speeches</button></div>
+      <div id="empty" class="empty" hidden>
+        <p><strong>No speech found for that topic.</strong></p>
+        <p>Try another word, or <a href="#contact">request a customized speech</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="achievements">
+    <div class="wrap">
+      <h2>Achievements</h2>
+      <p class="muted">Milestones, awards and highlights.</p>
+      <div class="grid achievements" id="achList"></div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Custom speech writing</p>
+        <h2>Need a customized speech?</h2>
+        <p class="c-lead">Tell me about your occasion and I will write a speech made just for you. Fill in the form and send it in one click.</p>
+        <ul class="contact-list" id="contactList"></ul>
+        <div class="socials" id="socials"></div>
+      </div>
+
+      <form id="orderForm" class="card form order-form" novalidate>
+        <h3 class="form-title">Tell me what you need</h3>
+        <div class="row2">
+          <label>Your name *<input name="name" required></label>
+          <label>Phone / WhatsApp<input name="phone" inputmode="tel"></label>
+        </div>
+        <label>Email<input name="email" type="email"></label>
+        <div class="row2">
+          <label>Occasion
+            <select name="occasion">
+              <option>School / College function</option><option>Competition</option><option>Wedding / Family event</option>
+              <option>Farewell</option><option>Corporate / Office</option><option>Independence / Republic Day</option>
+              <option>Teachers' Day</option><option>Other</option>
+            </select>
+          </label>
+          <label>Language
+            <select name="language"><option>English</option><option>Hindi</option><option>Marathi</option></select>
+          </label>
+        </div>
+        <label>Topic / title<input name="topic" placeholder="e.g. Importance of discipline"></label>
+        <div class="row2">
+          <label>Duration
+            <select name="duration"><option>1-2 minutes</option><option>3-5 minutes</option><option>5-10 minutes</option><option>10+ minutes</option></select>
+          </label>
+          <label>Tone
+            <select name="tone"><option>Inspiring</option><option>Formal</option><option>Emotional</option><option>Humorous</option><option>Simple</option></select>
+          </label>
+        </div>
+        <div class="row2">
+          <label>Audience<input name="audience" placeholder="e.g. Class 9 students"></label>
+          <label>Needed by<input name="deadline" type="date"></label>
+        </div>
+        <label>Anything else I should know?<textarea name="details" rows="4" placeholder="Key points, names to mention, speaker's age, etc."></textarea></label>
+        <div class="actions">
+          <button type="button" class="btn btn-wa" id="sendWa">Send on WhatsApp</button>
+          <button type="button" class="btn btn-ghost" id="sendMail">Send by Email</button>
+        </div>
+        <p id="formMsg" class="muted small"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="wrap">&copy; <span id="yr"></span> <span id="fname"></span>. All rights reserved.</div></footer>
+
+<dialog id="reader">
+  <article>
+    <header>
+      <div><h3 id="rTitle"></h3><p id="rMeta" class="muted small"></p></div>
+      <button class="x" id="rClose" aria-label="Close">&times;</button>
+    </header>
+    <pre id="rBody"></pre>
+    <footer>
+      <button class="btn btn-gold btn-sm" id="rCopy">Copy speech</button>
+      <a class="btn btn-ghost btn-sm" href="#contact" id="rCustom">Want it customized?</a>
+    </footer>
+  </article>
+</dialog>
+
+<script src="data/site.js"></script>
+<script src="data/speeches.js"></script>
+<script src="data/speeches-more.js"></script>
+<script src="data/lib/topic1.js"></script>
+<script src="data/lib/topic2.js"></script>
+<script src="data/lib/topic3.js"></script>
+<script src="data/lib/topic4.js"></script>
+<script src="data/lib/topic5.js"></script>
+<script src="data/lib/topic6.js"></script>
+<script src="data/lib/topic7.js"></script>
+<script src="data/lib/topic8.js"></script>
+<script src="data/lib/topic9.js"></script>
+<script src="data/lib/topic10.js"></script>
+<script src="data/lib/topic11.js"></script>
+<script src="data/lib/topic12.js"></script>
+<script src="data/occasions.js"></script>
+<script src="data/achievements.js"></script>
+<script src="js/app.js"></script>
+<script src="js/library.js"></script>
+</body>
+</html>
