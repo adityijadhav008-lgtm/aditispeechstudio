@@ -176,3 +176,10 @@ pre,.t-item,.t-title{font-family:inherit}
   .reader-body pre{max-height:none}
   .rd-back{display:inline-block}
 }
+/* smaller header on phones */
+@media (max-width: 600px) {
+  .nav { height: 56px; }
+  .brand { font-size: 1rem; gap: 8px; }
+  .brand-logo, .brand-mark { height: 30px; width: 30px; }
+  .nav nav .btn { padding: 7px 12px; font-size: .78rem; white-space: nowrap; }
+}
